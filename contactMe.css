@@ -1,0 +1,16 @@
+.aircraft:hover {
+    background-color: #a7d3cf;
+    transition: background-color 1s;
+}
+
+.fb:hover {
+    background-color: #99d5ff;
+}
+
+.insta:hover {
+    background-color: #ff94df;
+}
+
+.snap:hover {
+    background-color: #ffff59;
+}
