@@ -1,0 +1,5 @@
+.crystal:hover {
+    transition: background-color 1s;
+    background-color: #be259b;
+
+}

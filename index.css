@@ -1,0 +1,14 @@
+.navbar {
+    padding: 0px;
+    padding-left: 5px;
+    min-height: 10px;
+}
+
+
+.row {
+    margin-top: 20px;
+}
+
+.brand:hover {
+    font-weight: bolder;
+}
