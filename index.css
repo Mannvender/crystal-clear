@@ -4,6 +4,17 @@
     min-height: 10px;
 }
 
+.btnColor {
+    background-color:#4baab4;
+    outline-color: #4baab4;
+    border: #4baab4;
+}
+
+.btnColor:hover {
+    background-color: #272822;
+    outline-color: #272822;
+    border: #272822;
+}
 
 .row {
     margin-top: 20px;
