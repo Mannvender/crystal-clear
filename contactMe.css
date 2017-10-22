@@ -5,12 +5,15 @@
 
 .fb:hover {
     background-color: #99d5ff;
+    transition: background-color 1s;
 }
 
 .insta:hover {
     background-color: #ff94df;
+    transition: background-color 1s;
 }
 
 .snap:hover {
     background-color: #ffff59;
+    transition: background-color 1s;
 }
