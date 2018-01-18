@@ -1,0 +1,29 @@
+{
+  "name": "crystal-clear",
+  "version": "1.0.0",
+  "description": "a blog\r Motivation -\r https://www.wix.com/website-template/view/html/1583?originUrl=https%3A%2F%2Fwww.wix.com%2Fwebsite%2Ftemplates%2Fhtml%2Fcreative-arts%2F2&bookName=&galleryDocIndex=5&category=creative-arts",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mannvender/crystal-clear.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mannvender/crystal-clear/issues"
+  },
+  "homepage": "https://github.com/Mannvender/crystal-clear#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mysql2": "^1.5.1",
+    "sequelize": "^4.31.1"
+  },
+  "engines": {
+    "node": "9",
+    "npm": "5"
+  }
+}
