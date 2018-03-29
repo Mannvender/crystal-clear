@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Mannvender/crystal-clear#readme",
   "dependencies": {
+    "brain.js": "^1.1.2",
     "express": "^4.16.2",
     "mysql2": "^1.5.1",
     "sequelize": "^4.31.1"

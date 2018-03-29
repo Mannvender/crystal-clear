@@ -1,30 +1,31 @@
-const Entry = require('../../db').Entry
+const Category = require('../../db').category;
 const route = require('express').Router();
 
 route.get('/', (req, res) => {
-    Entry.findAll()
+    // get all posts
+    Category.findAll()
         .then((entries) => {
             res.status(200).send(entries)
         })
         .catch((err) => {
             res.status(500).send({
-                error: "Could not retrieve entries"
+                error: "Could not retrieve categories"
             })
         })
-})
+});
 
 route.post('/', (req, res) => {
     // Add a new product
-    Entry.create({
+    Category.create({
         name: req.body.name,
-        descriptionText: req.body.descriptionText
-    }).then((entries) => {
-        res.status(201).send(entries)
+        description: req.body.description
+    }).then((entry) => {
+        res.status(201).send(entry)
     }).catch((error) => {
         res.status(501).send({
-            error: "Error adding product"
+            error: "Error adding category"
         })
     })
-})
+});
 
-exports = module.exports = route
+exports = module.exports = route;

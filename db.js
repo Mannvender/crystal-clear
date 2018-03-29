@@ -1,4 +1,4 @@
-const Sequelize = require('sequelize')
+const Sequelize = require('sequelize');
 
 const db = new Sequelize('crystal', 'crystal', 'crystal', {
     host: 'localhost',
@@ -7,9 +7,9 @@ const db = new Sequelize('crystal', 'crystal', 'crystal', {
         min: 0,
         max: 5,
     }
-})
+});
 
-const User = db.define('users', {
+const user = db.define('user', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -19,9 +19,9 @@ const User = db.define('users', {
         type: Sequelize.STRING,
         allowNull: false,
     }
-})
+});
 
-const Entry = db.define('entries', {
+const post = db.define('entry', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -31,17 +31,48 @@ const Entry = db.define('entries', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    descriptionText: {
+    content: {
         type: Sequelize.STRING,
         allowNull: true
-
+    },
+    likes: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
+        allowNull: false
+    },
+    parentCategory: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
     }
-})
+});
 
-db.sync()
-    .then(() => console.log("Database has been synced"))
-    .catch((err) => console.error("Error creating database"))
+const category = db.define('category', {
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
+    name: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    description: {
+        type: Sequelize.STRING,
+        allowNull: true
+    }
+});
 
-exports = module.exports = {
-    User, Entry
-}
+Promise.all([
+    user.sync({alter: true}),
+    post.sync({alter: true}),
+    category.sync({alter: true}),
+])
+    .then(() => console.log('Database connected!'))
+    .catch((err) => console.log('error creating DB'));
+
+
+module.exports = exports = {
+    user,
+    post,
+    category,
+};

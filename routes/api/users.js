@@ -1,5 +1,5 @@
-const User = require('../../db').User
-const route = require('express').Router()
+const User = require('../../db').user;
+const route = require('express').Router();
 
 route.get('/', (req, res) => {
     // We want to send an array of all users
@@ -15,7 +15,7 @@ route.get('/', (req, res) => {
             })
         })
 
-})
+});
 
 route.post('/', (req, res) => {
     // We expect the req to have name in it
@@ -30,6 +30,6 @@ route.post('/', (req, res) => {
             error: "Could not add new user"
         })
     })
-})
+});
 
-exports = module.exports = route
+exports = module.exports = route;
