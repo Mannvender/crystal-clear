@@ -26,7 +26,7 @@ const uploadCatagoryPic = multer({
     storage: CatagoryPicStorage,
     // limits: {fileSize: 10},  // Unit Bytes
     fileFilter: checkFileType
-}).single('profilePic');
+}).single('catagory-pic');
 
 const uploadPostPic = multer({
     storage: postPicStorage,
