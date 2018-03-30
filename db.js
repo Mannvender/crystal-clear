@@ -21,7 +21,7 @@ const user = db.define('user', {
     }
 });
 
-const post = db.define('entry', {
+const post = db.define('post', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,

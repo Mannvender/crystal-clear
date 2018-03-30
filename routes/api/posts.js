@@ -14,6 +14,23 @@ route.get('/', (req, res) => {
         })
 });
 
+route.get('/specific', (req, res) => {
+    // get specific posts
+    let CatagoryID = req.query.CatagoryID;
+    console.log(CatagoryID);
+    identifierObj = {};
+    identifierObj.parentCategory = CatagoryID;
+    Post.findAndCount({where: identifierObj})
+        .then((posts) => {
+            res.status(200).send(posts)
+        })
+        .catch((err) => {
+            res.status(500).send({
+                error: "Could not retrieve posts"
+            })
+        })
+});
+
 route.post('/', (req, res) => {
     // Add a new product
     Post.create({

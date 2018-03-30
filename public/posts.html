@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add Catagory</title>
+    <title>Posts</title>
     <link rel="stylesheet" href="bootstrap.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             crossorigin="anonymous"></script>
@@ -65,19 +65,19 @@
 </div>
 
 <div class="container p-4 my-5 justify-content-center ">
-    <h3 class="text-center">Add Category</h3>
-    <form class="my-1" id="design_form" action="http://localhost:2222/api/catagory" method="post"
-          enctype="multipart/form-data">
-        <label for="name">Category Name</label>
-        <input type="text" id="name" class="row" name="name">
-        <label for="description">Description text</label>
-        <input type="text" id="description" name="description" class="row">
-        <label for="pic">Upload pic</label>
-        <input id="pic" name="file" type="file" class="row">
-        <button id="btnEntryAdd" class="btn btn-primary mt-3">Add</button>
-    </form>
+    <h3 class="text-center display-3">Posts</h3>
+    <div id="postContainer">
+        <div class="card">
+            <div class="card-header">Post1</div>
+            <img src="#" class="card-img">
+            <div class="card-body">
+                <p>lorum ipsum</p>
+            </div>
+        </div>
+    </div>
+
 </div>
 
-
+<script src="posts.js"></script>
 </body>
 </html>

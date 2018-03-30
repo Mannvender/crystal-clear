@@ -1,33 +1,35 @@
-function fetchEntries(done) {
-    $.get('/api/entries', function (data) {
+function fetchCatagories(done) {
+    $.get('http://localhost:2222/api/catagory', function (data) {
         done(data)
     })
 }
 
-function createEntry(entry) {
+function fetchPosts(parentCategory, done) {
+    $.get('http://localhost:2222/api/posts/specific?CatagoryID=' + parentCategory, function (data) {
+        done(data)
+    })
+}
+
+function createCatagory(catagory) {
     return (`
     <div class="card col-12 col col-md-4 col-sm-5" style="margin: 5px">
-            <img class="card-img-top" src="./img/${entry.name}.jpg" alt="Card image cap">
+            <img class="card-img-top" src="./img/${catagory.name}.jpg" alt="Card image cap">
             <div class="card-body">
-                <h4 class="card-title">${entry.name}</h4>
-                <p class="card-text">${entry.descriptionText}</p>
-                <button class="btn btn-primary btnColor" type="button" data-toggle="collapse"
-                        data-target="#collapseExample${entry.id}" aria-expanded="false" aria-controls="collapseExample">
-                    tell me bout it
-                </button>
+                <h4 class="card-title">${catagory.name}</h4>
+                <p class="card-text">${catagory.description}</p>
+                <a href="./posts.html?id=${catagory.id}" class="btn btn-info" role="button">Show More</a>
+            </div>
+        </div>
+    `)
+}
 
-                <div class="collapse" id="collapseExample${entry.id}">
-                    <div class="" style="margin-top: 15px">
-                        my favourite ${entry.name} thing
-                        <div class="list-group">
-                            <a href="#collapseExample${entry.id}"
-                               class="list-group-item list-group-item-action list-group-item-success">Starbucks</a>
-                            <a href="#collapseExample${entry.id}"
-                               class="list-group-item list-group-item-action list-group-item-info">Tim
-                                Hortons</a>
-                        </div>
-                    </div>
-                </div>
+function createPosts(postData) {
+    return (`
+    <div class="card m-3">
+            <div class="card-header">${postData.name}</div>
+            <img src="#" class="card-img">
+            <div class="card-body">
+                <p>${postData.content}</p>
             </div>
         </div>
     `)
