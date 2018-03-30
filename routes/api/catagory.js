@@ -1,9 +1,9 @@
-const Category = require('../../db').category;
+const Catagory = require('../../db').category;
 const route = require('express').Router();
 
 route.get('/', (req, res) => {
     // get all posts
-    Category.findAll()
+    Catagory.findAll()
         .then((entries) => {
             res.status(200).send(entries)
         })
@@ -16,7 +16,7 @@ route.get('/', (req, res) => {
 
 route.post('/', (req, res) => {
     // Add a new product
-    Category.create({
+    Catagory.create({
         name: req.body.name,
         description: req.body.description
     }).then((entry) => {

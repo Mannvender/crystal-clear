@@ -16,7 +16,7 @@
             integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
             crossorigin="anonymous"></script>
     <script src="blog.js"></script>
-    <script src="add_entries.js"></script>
+    <script src="add_catagorys.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top sticky-top">
@@ -65,18 +65,17 @@
     </div>
 </div>
 
-<div class="container p-4 my-5 justify-content-center text-center">
+<div class="container p-4 my-5 justify-content-center ">
     <h3 class="text-center">add entries</h3>
-    <form class="">
-        <div class="form-group">
-            <label for="entryName">Entry Name</label>
-            <input type="text" id="entryName">
-        </div>
-        <div class="form-group">
-            <label for="descriptionText">description text</label>
-            <input type="text" id="descriptionText">
-        </div>
-        <button id="btnEntryAdd" class="btn btn-primary">Add</button>
+    <form class="my-1" id="design_form" action="http://localhost:2222/api/catagory" method="post"
+          enctype="multipart/form-data">
+        <label for="name">Entry Name</label>
+        <input type="text" id="name" class="row" name="name">
+        <label for="descriptionText">description text</label>
+        <input type="text" id="descriptionText" name="descriptionText" class="row">
+        <label for="pic">Upload pic</label>
+        <input id="pic" name="file" type="file" class="row">
+        <button id="btnEntryAdd" class="btn btn-primary mt-3">Add</button>
     </form>
 </div>
 

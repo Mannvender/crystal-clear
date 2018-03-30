@@ -1,6 +1,6 @@
 $(function () {
-    let entryName = $('#entryName')
-    let descriptionText = $('#descriptionText')
+    let entryName = $('#entryName');
+    let descriptionText = $('#descriptionText');
 
     $('#btnEntryAdd').click(function () {
 
@@ -13,4 +13,4 @@ $(function () {
         )
     })
 
-})
+});

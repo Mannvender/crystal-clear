@@ -59,6 +59,10 @@ const category = db.define('category', {
     description: {
         type: Sequelize.STRING,
         allowNull: true
+    },
+    pic: {
+        type: Sequelize.STRING,
+        allowNull: true
     }
 });
 
