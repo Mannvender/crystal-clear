@@ -17,7 +17,7 @@ const CatagoryPicStorage = multer.diskStorage(({
     filename: nameThatBitch
 }));
 
-const postPicStorage = multer.diskStorage(({
+const PostPicStorage = multer.diskStorage(({
     destination: './public/img/posts',
     filename: nameThatBitch
 }));
@@ -29,10 +29,10 @@ const uploadCatagoryPic = multer({
 }).single('catagory-pic');
 
 const uploadPostPic = multer({
-    storage: postPicStorage,
+    storage: PostPicStorage,
     // limits: {fileSize: 10},  // Unit Bytes
     fileFilter: checkFileType
-}).single('postPic');
+}).single('post-pic');
 
 function nameThatBitch(req, file, cb) {
     cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))

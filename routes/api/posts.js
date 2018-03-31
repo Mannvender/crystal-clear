@@ -37,6 +37,7 @@ route.post('/', (req, res) => {
         name: req.body.name,
         content: req.body.content,
         parentCategory: req.body.parentCategory,
+        pic: req.file.filename
     }).then((entry) => {
         res.status(201).send(entry)
     }).catch((error) => {

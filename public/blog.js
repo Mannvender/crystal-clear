@@ -13,7 +13,7 @@ function fetchPosts(parentCategory, done) {
 function createCatagory(catagory) {
     return (`
     <div class="card col-12 col col-md-4 col-sm-5" style="margin: 5px">
-            <img class="card-img-top" src="./img/${catagory.name}.jpg" alt="Card image cap">
+            <img class="card-img-top" src="./img/catagory/${catagory.pic}" alt="Card image cap">
             <div class="card-body">
                 <h4 class="card-title">${catagory.name}</h4>
                 <p class="card-text">${catagory.description}</p>
@@ -25,9 +25,9 @@ function createCatagory(catagory) {
 
 function createPosts(postData) {
     return (`
-    <div class="card m-3">
-            <div class="card-header">${postData.name}</div>
-            <img src="#" class="card-img">
+    <div class="card p-0 m-2">  
+     <div class="card-header">${postData.name}</div>
+            <img class="card-img m-0 mx-2" style="max-width: 400px" src="./img/posts/${postData.pic}" alt="Card image">
             <div class="card-body">
                 <p>${postData.content}</p>
             </div>

@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+const datatypes = Sequelize.DataTypes;
 
 const db = new Sequelize('crystal', 'crystal', 'crystal', {
     host: 'localhost',
@@ -6,62 +7,67 @@ const db = new Sequelize('crystal', 'crystal', 'crystal', {
     pool: {
         min: 0,
         max: 5,
-    }
+    },
+    operatorsAliases: false
 });
 
 const user = db.define('user', {
     id: {
-        type: Sequelize.INTEGER,
+        type: datatypes.INTEGER,
         autoIncrement: true,
         primaryKey: true
     },
     name: {
-        type: Sequelize.STRING,
+        type: datatypes.STRING,
         allowNull: false,
     }
 });
 
 const post = db.define('post', {
     id: {
-        type: Sequelize.INTEGER,
+        type: datatypes.INTEGER,
         autoIncrement: true,
         primaryKey: true
     },
     name: {
-        type: Sequelize.STRING,
+        type: datatypes.STRING,
         allowNull: false
     },
     content: {
-        type: Sequelize.STRING,
+        type: datatypes.TEXT,
         allowNull: true
     },
     likes: {
-        type: Sequelize.INTEGER,
+        type: datatypes.INTEGER,
         defaultValue: 0,
         allowNull: false
     },
     parentCategory: {
-        type: Sequelize.INTEGER,
+        type: datatypes.INTEGER,
         allowNull: false,
+    },
+    pic: {
+        type: datatypes.STRING,
+        allowNull: true
     }
 });
 
 const category = db.define('category', {
     id: {
-        type: Sequelize.INTEGER,
+        type: datatypes.INTEGER,
         autoIncrement: true,
         primaryKey: true
     },
     name: {
-        type: Sequelize.STRING,
+        type: datatypes.STRING,
         allowNull: false
     },
     description: {
-        type: Sequelize.STRING,
+        type: datatypes.STRING,
         allowNull: true
     },
     pic: {
-        type: Sequelize.STRING,
+        type: datatypes.STRING,
         allowNull: true
     }
 });

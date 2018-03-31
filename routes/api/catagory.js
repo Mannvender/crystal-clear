@@ -18,7 +18,8 @@ route.post('/', (req, res) => {
     // Add a new product
     Catagory.create({
         name: req.body.name,
-        description: req.body.description
+        description: req.body.description,
+        pic: req.file.filename
     }).then((entry) => {
         res.status(201).send(entry)
     }).catch((error) => {
