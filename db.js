@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const datatypes = Sequelize.DataTypes;
 const DB = require("./configure.json").DB;
-const db = new Sequelize('postgres://ufalduhpcmzzjh:dd75f850ef9f24855d76ff240afc32c6db1feb74c6be573809b0b044d2cba6f6@ec2-23-21-121-220.compute-1.amazonaws.com:5432/dcvo4s5ql5rk6b');
+const db = new Sequelize('postgres://fcyrvxayngkinq:e42a9414714e9e951609254b41d7e8576af7ea50a04e0edce1630363165ce1c8@ec2-54-243-63-13.compute-1.amazonaws.com:5432/d9mt4453i0no5m');
 
 // const db = new Sequelize('crystal', 'crystal', 'crystal', {
 //     host: 'localhost',
