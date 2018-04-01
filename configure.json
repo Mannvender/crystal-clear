@@ -1,0 +1,12 @@
+{
+  "SERVER": {
+    "PORT": 2222
+  },
+  "DB": {
+    "USER": "crystal",
+    "DATABASE": "crystal",
+    "PASSWORD": "crystal",
+    "HOST": "localhost",
+    "DIALECT": "postgres"
+  }
+}

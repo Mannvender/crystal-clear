@@ -2,9 +2,9 @@ const express = require('express');
 const path = require('path');
 const multer = require('multer');
 const cors = require('cors');
+const PORT = process.env.PORT || require("./configure.json").SERVER.PORT;
 
 const app = express();
-const Server_Port = process.env.PORT || 2222;
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -71,4 +71,4 @@ app.use('/api/posts', (req, res, next) => {
 app.use('/', express.static(path.join('public')));
 app.use('/api', require('./routes/api').route);
 
-app.listen(Server_Port, () => console.log('Server started at http://localhost:2222'));
+app.listen(PORT, () => console.log('Server started at http://localhost:' + PORT));

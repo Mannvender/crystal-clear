@@ -1,11 +1,11 @@
 function fetchCatagories(done) {
-    $.get('http://localhost:2222/api/catagory', function (data) {
+    $.get('/api/catagory', function (data) {
         done(data)
     })
 }
 
 function fetchPosts(parentCategory, done) {
-    $.get('http://localhost:2222/api/posts/specific?CatagoryID=' + parentCategory, function (data) {
+    $.get('/api/posts/specific?CatagoryID=' + parentCategory, function (data) {
         done(data)
     })
 }
